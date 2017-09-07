@@ -1,0 +1,109 @@
+﻿<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Χωροταξικό</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<script type="text/javascript" src="scripts/schoolArea.js" ></script>
+	<script type="text/javascript" src="scripts/schools.js" ></script>
+	<script type="text/javascript" src="scripts/menu.js" ></script>
+	<script type = "text/javascript" 
+        src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+	</script>
+	
+	<link rel="stylesheet" type="text/css" href="style/style.css" />    
+  	
+</head>
+
+<body>
+	<div id="main">
+	
+		<!-- Header -->
+    	<div id="header"><script> displayHeader(2);</script></div>
+    	<div id="content_header"></div>
+  
+  		<!-- Page content -->
+  		<div id="page_content">  
+  			<table> 
+  				<tr>
+  					<td>
+  						<section>				
+							<div id="wrapper" style="width:600px;">
+								<div id="container2">
+									<div class="container_title"> Αναζήτηση</div> 
+									<br>
+										<table class="arrange_table"> 
+											<tr class="arrange_tr">
+												<td class="arrange_td">
+													<div class="field_description"> Δήμος*</div>
+													<div id="dimoidiv">
+														<select id="viewschsDimoi" name="viewschsDimoi">
+															<option value="empty"></option>
+							  							</select>
+							  							<script> loadDimous("#viewschsDimoi");</script></div>
+												</td>
+							 
+												<td class="arrange_td">
+													<div class="field_description"> Τύπος σχολείου*</div>
+													<div>							
+														<select id="viewschsType" name="viewschsType" >
+															<option value="empty"></option>
+															<option value="ΔΗΜΟΤΙΚΟ">ΔΗΜΟΤΙΚΑ</option>
+															<option value="ΓΥΜΝΑΣΙΟ">ΓΥΜΝΑΣΙΑ</option>
+															<option value="ΛΥΚΕΙΟ">ΛΥΚΕΙΑ</option>
+														</select>																				
+													</div> 
+												</td>
+								
+												<td class="arrange_td">
+													<div class="field_description">&nbsp</div>
+													<p class="button"> 
+														<input type="button" id='displaySchoolsButton'  onclick=displaySchools() value="Εμφάνιση σχολείων" style='width: 180px;margin:5px; '/> 
+													</p> 
+												</td>
+											</tr>	
+										</table>
+									</div>						
+								</div> 
+            				</section>
+  						</td>
+  						<td>&nbsp</td>
+  						<td>
+  							<section>				
+								<div id="wrapper" style="width:280px;">
+									<div id="container2">
+										<div class="container_title"> Εισαγωγή</div> 
+										<br>
+										<div class="field_description">&nbsp</div>
+										<p class="button" style="text-align:center"> 								
+											<input type="button" id='addSchools'  onclick=addSchools() value="Νέο σχολείο" style='width: 180px;margin:5px; '/> 
+										</p> 
+									</div>						
+								</div> 
+            				</section>
+  						</td>
+  					</tr>
+  				</table>
+			<!-- Output area: table of results -->
+			<div id="output_container">	
+			
+				<!--   Εδώ θα εμφανιστούν τα σχολεία του δήμου που έχει επιλεγεί ή 
+				η καρτέλα για την καταχώρηση νέου σχολείου -->
+					
+
+         	</div>			
+		<!--  End of Page content -->	
+		</div>
+					
+		    	
+    <!-- End of Main -->					    
+   	</div>    
+   	
+   	<!--  Ο χάρτης δηλώνεται μόνο για να χρησιμοποιήσουμε το geocode 
+   	για την μετατροπή των διευθύνσεων από κείμενο σε συντεταγμένες -->
+   	<div id="map"></div>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYzZWHOLEo0qk_dZDv5IREmcAFXXFZ6XU&libraries=geometry&callback=initMap"
+        async defer></script> 
+        
+</body>
+</html>
